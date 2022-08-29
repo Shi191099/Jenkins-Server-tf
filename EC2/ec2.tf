@@ -70,7 +70,7 @@ Name = "JenkinsMaster"
 
 resource "local_file" "ipaddr" {
     
- filename = "./inventory.txt"
+ filename = "inventory.txt"
  content = <<-EOT
      [JenkinsMaster]
      ${aws_instance.Master.public_ip}
@@ -82,7 +82,7 @@ resource "local_file" "ipaddr" {
    depends_on = [local_file.ipaddr] 
 
  provisioner "local-exec" {
-         command     = "ansible-playbook /home/ansible/JenkinsServer/Ansible/jenkins_ansible.yml"
+         command     = "ansible-playbook /home/minfy/Jenkins-Server-tf/Ansible/jenkins_ansible.yml"
      }
  }
 
