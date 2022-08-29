@@ -1,0 +1,3 @@
+- hosts: JenkinsMaster
+  roles:
+  - role: "shi.ansible_jenkinsserver"
